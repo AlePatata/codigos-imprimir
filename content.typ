@@ -24,7 +24,7 @@
 // Conectores que quedan en minúscula (salvo al inicio)
 #let small-words = ("y", "de", "del", "en", "la", "el", "a")
 // Siglas que van en mayúscula
-#let acronyms = ("dfs", "bfs", "lca", "hld", "ahld", "kmp", "lis", "vim", "2d")
+#let acronyms = ("dfs", "bfs", "lca", "hld", "ahld", "kmp", "lis", "vim", "2d", "stl")
 
 #let title-case(string) = {
   if string.len() <= 3 {
