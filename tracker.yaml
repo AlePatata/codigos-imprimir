@@ -1,6 +1,6 @@
 content:
   - general:
-    - plantilla.cpp
+    - template.cpp
     - depuracion.typ
     - tiempo-de-ejecucion.typ
     - getline.typ
@@ -17,6 +17,7 @@ content:
       - funcion-prefijo.cpp
       - kmp.cpp
       - aho-corasick.cpp
+      - aho-corasick-busqueda.cpp
     - avanzado:
       - manacher.cpp
       - rotacion-minima.cpp
