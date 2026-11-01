@@ -3,7 +3,7 @@
  *Complejidad:* $O(log b)$
  */
 template<class T>
-T binpow(T a, int b, T m) {
+T binpow(T a, T b, T m) {
   T ans = 1;
   a %= m;
   while (b > 0) {
