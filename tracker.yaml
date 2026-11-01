@@ -51,6 +51,7 @@ content:
     - criba.cpp
     - binpow.cpp
     - invmod.cpp
+    - invmod-gen.cpp
     - factorizacion-prima.cpp
     - binomial.cpp
     - factorial.cpp
