@@ -100,4 +100,5 @@ content:
     - removal-game.cpp
     - removing-digits.cpp
     - stones.cpp
+    - huevos.cpp
 
