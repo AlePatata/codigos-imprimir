@@ -24,9 +24,9 @@ matrix<T> binpowmat(matrix<T> a,
 
     while (b > 0) {
         if (b & 1)
-            ans = binpowmat(ans, a, mod);
+            ans = multmat(ans, a, mod);
 
-        A = multmat(A, A, mod);
+        a = multmat(a, a, mod);
         b >>= 1;
     }
 
