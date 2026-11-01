@@ -50,13 +50,14 @@ content:
     - criba.cpp
     - binpow.cpp
     - invmod.cpp
-    - rotar-matriz.cpp
-    - mult-mat.cpp
-    - binpow-mat.cpp
     - factorizacion-prima.cpp
     - binomial.cpp
     - factorial.cpp
     - invfact.cpp
+    - rotar-matriz.cpp
+    - mult-mat.cpp
+    - binpow-mat.cpp
+    - gauss-jordan.cpp
 
   - graphs:
     - bfs.cpp
