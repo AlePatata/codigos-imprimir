@@ -6,8 +6,8 @@ dp[0] = 0;
 for (int i = 1; i <= n; ++i) {
   string digitos = to_string(i);
   int m = INF;
-  for (int j = 0; j < digitos.size(); ++j) {
+  for (int j = 0; j < sz(digitos); ++j) {
     int dj = digitos[j] - '0';
     m = min(m, dp[i - dj]);
   } dp[i] = 1+m;
-} cout << dp[n] << endl;
+} cout << dp[n] << '\n';

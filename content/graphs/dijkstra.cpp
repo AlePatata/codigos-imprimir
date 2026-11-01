@@ -1,18 +1,18 @@
 /*
  *Descripción:* Computa las distancias mínimas desde un nodo inicial a todos los demás en un grafo ponderado, con pesos no negativos, usando el algoritmo de Dijkstra.
+ - `gr[u]` contiene pares `{v, w}`: arista `u -> v` con peso `w`
  *Complejidad:* $O(V log V + E)$
 */
-
-vec<ll> dist(n, INF);
-dist[x] = 0;
+vector<ll> dist(n, LLONG_MAX);
+dist[s] = 0;
 // esto o insertar pesos negativos
-priority_queue<pli, vec<pli>, greater<pli>> q;
-q.push({0, x});
+priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
+q.push({0, s});
 while (!q.empty()) {
-  auto [w0, u] = q.top(); q.pop();
-  if (seen[u]) continue;
-  seen[u] = true;
-  for (auto [w, v] : graph[u]) {
+  auto [d, u] = q.top(); q.pop();
+  if (vis[u]) continue;
+  vis[u] = true;
+  for (auto [v, w] : gr[u]) {
     if (dist[v] > dist[u] + w) {
       dist[v] = dist[u] + w;
       q.push({dist[v], v});

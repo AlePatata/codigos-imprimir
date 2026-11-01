@@ -12,15 +12,39 @@
   size: 7pt
 )
 
+// Los nombres de archivo van sin tildes; acá se agregan para el título
+#let accents = (
+  area: "área", arbol: "árbol", busqueda: "búsqueda", calculo: "cálculo",
+  depuracion: "depuración", dinamico: "dinámico", ejecucion: "ejecución",
+  factorizacion: "factorización",
+  funcion: "función", geometria: "geometría", minima: "mínima",
+  minimos: "mínimos", numeros: "números", poligono: "polígono",
+  rotacion: "rotación", topologico: "topológico", trigonometria: "trigonometría",
+)
+// Conectores que quedan en minúscula (salvo al inicio)
+#let small-words = ("y", "de", "del", "en", "la", "el", "a")
+// Siglas que van en mayúscula
+#let acronyms = ("dfs", "bfs", "lca", "hld", "ahld", "kmp", "lis", "vim", "2d", "stl")
+
 #let title-case(string) = {
   if string.len() <= 3 {
     return upper(string)
   }
 
-  return string.replace(
-    regex("[A-Za-z]+('[A-Za-z]+)?"),
-    word => upper(word.text.first()) + lower(word.text.slice(1))
-  )
+  let first = true
+  let words = ()
+  for word in string.split(" ") {
+    let w = accents.at(lower(word), default: word)
+    if lower(w) in acronyms {
+      words.push(upper(w))
+    } else if not first and lower(w) in small-words {
+      words.push(lower(w))
+    } else {
+      words.push(upper(w.first()) + lower(w.slice(w.first().len())))
+    }
+    first = false
+  }
+  words.join(" ")
 }
 
 #let content-to-string(content) = {

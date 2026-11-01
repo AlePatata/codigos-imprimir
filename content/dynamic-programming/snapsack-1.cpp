@@ -12,4 +12,4 @@ for (int i = 0; i < n; ++i)
       imax = dp[i][j];
     dp[i+1][j] = imax;
   }
-cout << dp[n][W] << endl;
+cout << dp[n][W] << '\n';

@@ -30,7 +30,7 @@
 #[
   #set page(columns: 2)
   #set text(size: 10pt)
-  #outline()
+  #outline(title: [Índice])
 ]
 #pagebreak()
 

@@ -1,6 +1,5 @@
 /*
- *Description:* Finds sets and merges elements, complexity $O( alpha(n))$. $alpha(10^(600)) approx 4$
- *Status:* Highly tested
+ *Descripción:* Encuentra el conjunto de un elemento y une conjuntos, complejidad $O( alpha(n))$. $alpha(10^(600)) approx 4$
 */
 struct union_find {
   vector<int> e;

@@ -1,7 +1,7 @@
 /*
  *Descripción:* Dado un rectángulo de tamaño $a times b$, encuentra el número mínimo de cortes necesarios para dividirlo en cuadrados.
 */
-vector<vi> dp(a+1, vi(b+1));
+vector<vector<int>> dp(a+1, vector<int>(b+1));
 for (int i = 0; i <= min(a,b); ++i) dp[i][i] = 0;
 for (int i = 1; i <= a; ++i)
   for (int j = 1; j <= b; ++j) {
@@ -13,4 +13,4 @@ for (int i = 1; i <= a; ++i)
       m = min(m, dp[i][j-k] + dp[i][k]);
     dp[i][j] = 1 + m;
   }
-cout << dp[a][b] << endl;
+cout << dp[a][b] << '\n';

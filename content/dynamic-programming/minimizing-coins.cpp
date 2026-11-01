@@ -14,4 +14,4 @@ int f(int monto) {
 }
 memo.resize(x+1, INF+1);
 int ans = f(x); if (ans == INF) ans = -1;
-cout << ans << endl;
+cout << ans << '\n';

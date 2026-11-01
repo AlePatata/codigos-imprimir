@@ -16,4 +16,4 @@ for (int x = 1; x < n+1; ++x) {
       if (rest >= 0) m = max (m, a[j] + (rest - dp[rest]) );
     }
   } dp[x] = m;
-} cout << dp[n] << endl;
+} cout << dp[n] << '\n';

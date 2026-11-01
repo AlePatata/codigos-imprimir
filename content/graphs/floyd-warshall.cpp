@@ -1,14 +1,13 @@
 /*
- *Description:* All shortest path, runs on $O(V^3)$
- *Status:* Tested
+ *Descripción:* Caminos más cortos entre todos los pares de nodos, en $O(V^3)$
 */
 
-// Create distance matrix
+// Crear matriz de distancias
 for (int i = 1; i <= n; i++) {
   for (int j = 1; j <= n; j++) {
-    if (i == j) distance[i][j] = 0;
-    else if (adj[i][j]) distance[i][j] = adj[i][j];
-    else distance[i][j] = INF;
+    if (i == j) dist[i][j] = 0;
+    else if (gr[i][j]) dist[i][j] = gr[i][j];
+    else dist[i][j] = INF;
   }
 }
 
@@ -16,7 +15,7 @@ for (int i = 1; i <= n; i++) {
 for (int k = 1; k <= n; k++) {
   for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= n; j++) {
-      distance[i][j] = min(distance[i][j], distance[i][k]+distance[k][j]);
+      dist[i][j] = min(dist[i][j], dist[i][k]+dist[k][j]);
     }
   }
 }

@@ -15,4 +15,4 @@ for (int i = 1; i < n; ++i) {
 } ll ans = 0;
 for (int i = 0; i < n; ++i)
   ans += dp1[i];
-cout << ans << endl;
+cout << ans << '\n';

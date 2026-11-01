@@ -1,53 +1,55 @@
 content:
   - general:
-    - template.cpp
-    - troubleshoot.typ
-    - execution-time.typ
+    - plantilla.cpp
+    - depuracion.typ
+    - tiempo-de-ejecucion.typ
     - getline.typ
-    - random.cpp
-    - binary-searching.cpp
-    - ternary-search.cpp
+    - numeros-aleatorios.cpp
+    - busqueda-binaria.cpp
+    - busqueda-ternaria.cpp
     - lower-y-upper-bound.typ
     - bits.typ
+    - funciones-stl.typ
     - vim.typ
   - strings:
-    - pattern-matching:
+    - busqueda-de-patrones:
       - rolling-hashing.cpp
       - k-rolling-hashing.cpp
-      - prefix-function.cpp
+      - funcion-prefijo.cpp
       - kmp.cpp
       - aho-corasick.cpp
-    - advanced:
+    - avanzado:
       - manacher.cpp
-      - min-rotation.cpp
+      - rotacion-minima.cpp
   - data-structures:
-    - min-queue.cpp
-    - min-stack.cpp
-    - min-deque.cpp
+    - cola-de-minimos.cpp
+    - pila-de-minimos.cpp
+    - deque-de-minimos.cpp
+    - cola-persistente.cpp
     - union-find.cpp
     - sparse-table.cpp
     - segment-tree.cpp
     - segment-tree-lazy.cpp
-    - iterative-segment-tree-lazy.cpp
+    - segment-tree-lazy-iterativo.cpp
     - funciones-st-lazy.cpp 
-    - persistent-segment-tree.cpp
-    - dynamic-segment-tree.cpp
+    - segment-tree-persistente.cpp
+    - segment-tree-dinamico.cpp
     - ordered-set.cpp
     - line-container.cpp
   - maths:
-    - reference:
-      - equations.typ
-      - trigonometry.typ
-      - geometry.typ
-      - calculus.typ
-      - sums-series.typ
-      - probability.typ
-      - bit-operations.typ
+    - resumen:
+      - ecuaciones.typ
+      - trigonometria.typ
+      - geometria.typ
+      - calculo.typ
+      - sumas-y-series.typ
+      - probabilidad.typ
+      - operaciones-de-bits.typ
     - divisores.cpp
     - criba.cpp
     - binpow.cpp
     - invmod.cpp
-    - rotate-matrix.cpp
+    - rotar-matriz.cpp
     - factorizacion-prima.cpp
     - binomial.cpp
     - factorial.cpp
@@ -55,26 +57,28 @@ content:
 
   - graphs:
     - bfs.cpp
-    - dfs.cpp
-    - topo-sort.cpp
     - floyd-warshall.cpp
     - dijkstra.cpp
-    - kruskal_tree.cpp
-    - kruskal_value.cpp
+    - kruskal-arbol.cpp
+    - kruskal-valor.cpp
     - hld.cpp
     - ahld.cpp
     - lca.cpp
     - bellman-ford.cpp
+    - dfs:
+      - dfs.cpp
+      - dfs-iterativo.cpp
+      - orden-topologico.cpp
 
   - geometry:
-    - point-2d.cpp
+    - punto-2d.cpp
     - convex-hull.cpp
-    - point-inside-polygon.cpp
-    - polygon-area.cpp
+    - punto-en-poligono.cpp
+    - area-de-poligono.cpp
 
   - dynamic-programming:
     - lis.cpp
-    - line-container.cpp
+    - sumas-prefijas-2d.cpp
     - 2^sort.cpp
     - cut-ribbon.cpp
     - frog-1.cpp

@@ -15,5 +15,5 @@ int dp(int i) {
   return memo[i] = 1 + max(dpa, max(dpb, dpc));
 }
 
-cout << dp(n) << endl;
+cout << dp(n) << '\n';
 

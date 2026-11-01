@@ -16,4 +16,4 @@ for (int i = 0; i < n; ++i) {
     dpActual[x] = (dpi + dpx)%mod;
   }
   swap(dpActual, dpAnterior);
-} cout << dpAnterior[X] << endl;
+} cout << dpAnterior[X] << '\n';

@@ -10,4 +10,4 @@ for (int i = 0; i < n; ++i)
       if (i) dp[i][j] = (dp[i][j] + dp[i-1][j])%mod;
       if (j) dp[i][j] = (dp[i][j] + dp[i][j-1])%mod;
     }
-cout << dp[n-1][n-1] << endl;
+cout << dp[n-1][n-1] << '\n';

@@ -1,6 +1,5 @@
 /*
- *Description:* Built-in version of C++ of select and rank operations in sets
- *Status:* Tested
+ *Descripción:* Versión incluida en C++ de las operaciones select (k-ésimo elemento) y rank (posición) en sets
 */
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>

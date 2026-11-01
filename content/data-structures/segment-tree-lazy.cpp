@@ -1,17 +1,17 @@
 /*
- *Description:* Segment tree but with range updates, build $O(n)$, query and update $O(log n)$
- *notes*: Funciona en casos de circulos (l>r)
+ *Descripción:* Segment tree con updates en rangos. Construcción $O(n)$, consulta y update $O(log n)$
+ *Notas:* Funciona en casos de circulos (l>r)
  requiere 3 funciones:
 - merge: forma del st :3
 - pushUpd: lo que se guarda como en el 'rango'
 - applyUpd: aplicación del update a cada nodo
 */
 template<
-  class T1, // answer value stored on nodes
-  class T2, // lazy update value stored on nodes
+  class T1, // valor de respuesta guardado en los nodos
+  class T2, // valor del update lazy guardado en los nodos
   T1 merge(T1, T1),
-  void pushUpd(T2& /*parent*/, T2& /*child*/, int, int, int, int), // push update value from a node to another. parent -> child
-  void applyUpd(T2&, T1&, int, int)           // apply the update value of a node to its answer value. upd -> ans
+  void pushUpd(T2& /*padre*/, T2& /*hijo*/, int, int, int, int), // pasa el update de un nodo a otro. padre -> hijo
+  void applyUpd(T2&, T1&, int, int)           // aplica el update de un nodo a su respuesta. upd -> ans
 >
 struct segment_tree_lazy{
   vector<T1> ST; vector<T2> lazy; vector<bool> upd;
@@ -27,7 +27,7 @@ struct segment_tree_lazy{
   }
   segment_tree_lazy() {}
   segment_tree_lazy(vector<T1>&values){
-    n = values.size(); ST.resize(n << 2 | 3);
+    n = sz(values); ST.resize(n << 2 | 3);
     lazy.resize(n << 2 | 3); upd.resize(n << 2 | 3, false);
     build(1, 0, n - 1, values);
   }

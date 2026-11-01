@@ -1,48 +1,45 @@
 /*
-  *Author:* Javier Oliva
-  *Description:* Answer queries in $O( log(V) dot A dot B )$, where $A$ is the complexity of merging two chains and $B$ is the complexity of the data structure query.
-  *Status:* Partially tested
+  *Autor:* Javier Oliva
+  *Descripción:* Responde consultas en $O( log(V) dot A dot B )$, donde $A$ es la complejidad de combinar dos cadenas y $B$ la complejidad de la consulta de la estructura de datos.
 */
 template <class DS, class T, T merge(T, T), int IN_EDGES>
 struct heavy_light {
-  vector <int> parent, depth, heavy, head, pos_down;
+  vector<int> parent, depth, heavy, head, pos_down;
   int n, cur_pos_down; DS ds_down;
-  int dfs(int v, vector < vector < int >>
-    const & adj) {
+  int dfs(int v, const vector<vector<int>> &gr) {
     int size = 1;
     int max_c_size = 0;
-    for (int c: adj[v])
+    for (int c : gr[v])
       if (c != parent[v]) {
         parent[c] = v, depth[c] = depth[v] + 1;
-        int c_size = dfs(c, adj);
+        int c_size = dfs(c, gr);
         size += c_size;
         if (c_size > max_c_size)
           max_c_size = c_size, heavy[v] = c;
       }
     return size;
   }
-  void decompose(int v, int h, vector<vector<int>>
-    const & adj, vector <T> & a_down, vector <T> & values) {
+  void decompose(int v, int h, const vector<vector<int>> &gr, vector<T> &a_down, vector<T> &values) {
     head[v] = h, pos_down[v] = cur_pos_down++;
     a_down[pos_down[v]] = values[v];
     if (heavy[v] != -1)
-      decompose(heavy[v], h, adj, a_down, values);
-    for (int c: adj[v]) {
+      decompose(heavy[v], h, gr, a_down, values);
+    for (int c : gr[v]) {
       if (c != parent[v] && c != heavy[v])
-        decompose(c, c, adj, a_down, values);
+        decompose(c, c, gr, a_down, values);
     }
   }
-  heavy_light(vector <vector<int>> &adj, vector <T> & values) {
-    n = adj.size();
+  heavy_light(vector<vector<int>> &gr, vector<T> &values) {
+    n = sz(gr);
     parent.resize(n);
     depth.resize(n);
     heavy.resize(n, -1);
     head.resize(n);
     pos_down.resize(n);
-    vector < T > a_down(n);
+    vector<T> a_down(n);
     cur_pos_down = 0;
-    dfs(0, adj);
-    decompose(0, 0, adj, a_down, values);
+    dfs(0, gr);
+    decompose(0, 0, gr, a_down, values);
     ds_down = DS(a_down);
   }
   void update(int a, int b, T x) {

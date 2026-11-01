@@ -2,7 +2,7 @@
  *Descripción:* Dado un arreglo (de $n$ elementos con valores entre 1 y $m$) con ciertos elementos borrados (representados con 0),\
  encuentra la cantidad de arreglos que se pueden formar cumpliendo que la diferencia entre elementos consecutivos debe ser a lo mas 1.
 */
-vector<vi> dp(n, vi(m+1, 0));
+vector<vector<int>> dp(n, vector<int>(m+1, 0));
 if (x[0] == 0)
   for (int j = 1; j < m+1; ++j)
     dp[0][j] = 1;
@@ -22,4 +22,4 @@ for (int i = 1; i < n; ++i)
 ll sol = 0;
 for (int j = 1; j < m+1; ++j)
   sol = (sol + dp[n-1][j])%mod;
-cout << sol << endl;
+cout << sol << '\n';
