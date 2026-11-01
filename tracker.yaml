@@ -47,6 +47,7 @@ content:
       - probabilidad.typ
       - operaciones-de-bits.typ
     - divisores.cpp
+    - ext-gcd.cpp
     - criba.cpp
     - binpow.cpp
     - invmod.cpp
