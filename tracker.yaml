@@ -52,6 +52,7 @@ content:
     - invmod.cpp
     - rotar-matriz.cpp
     - mult-mat.cpp
+    - binpow-mat.cpp
     - factorizacion-prima.cpp
     - binomial.cpp
     - factorial.cpp
