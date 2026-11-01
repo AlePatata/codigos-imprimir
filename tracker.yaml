@@ -49,6 +49,7 @@ content:
     - divisores.cpp
     - ext-gcd.cpp
     - criba.cpp
+    - sieve.cpp 
     - binpow.cpp
     - invmod.cpp
     - invmod-gen.cpp
