@@ -8,6 +8,7 @@ content:
     - busqueda-binaria.cpp
     - busqueda-ternaria.cpp
     - lower-y-upper-bound.typ
+    - bits.typ
     - funciones-stl.typ
     - vim.typ
   - strings:
@@ -31,6 +32,7 @@ content:
     - segment-tree.cpp
     - segment-tree-lazy.cpp
     - segment-tree-lazy-iterativo.cpp
+    - funciones-st-lazy.cpp 
     - segment-tree-persistente.cpp
     - segment-tree-dinamico.cpp
     - ordered-set.cpp
