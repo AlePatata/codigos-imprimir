@@ -58,6 +58,7 @@ content:
     - mult-mat.cpp
     - binpow-mat.cpp
     - gauss-jordan.cpp
+    - gauss-mod.cpp
 
   - graphs:
     - bfs.cpp
