@@ -84,6 +84,7 @@ content:
       - puntos-de-articulacion.cpp
     - flow:
       - dinic.cpp
+      - hopcroft-karp.cpp
 
   - geometry:
     - punto-2d.cpp
