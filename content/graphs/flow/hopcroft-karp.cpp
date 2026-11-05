@@ -1,14 +1,6 @@
-#include "../template.h"
-/* -
-name = "Hopcroft Karp"
-description = "Fast bipartite matching algorithm. Graph $g$ should be a list of neighbors of the left partition, and $r$ should be a vector full of $-1$'s of the same size as the right partition. Returns the size of the matching. $r[i]$ will be the match for vertex $i$ on the right side, or $-1$ if it's not matched."
-usage = "`vi r(m, -1); hopcroftKarp(g, r);`"
-time = "$O\\(sqrt(V) E\\)$" 
-- */
-
 /*
  *Descripción:* Matching rápido de bipartitos. $g$ es la lista de vecinos de la partición izq y $r$ es un vector inicializado en -1 de la partición der. Retorna el tamaño del maatching; $r[i]$ guarda el nodo izq asignado al der $i$ (-1 si libre).
- *Complejidad:* $O(\sqrt{V} E)$
+ *Complejidad:* $O(sqrt{V} E)$
  *Uso:* vector<int> r(m,-1); hopcroftKarp(g,r)
  Devuelve un vector r con sus parejas (se pasa por ref) :D
  */
