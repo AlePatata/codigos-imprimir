@@ -16,6 +16,7 @@ content:
       - rolling-hashing.cpp
       - k-rolling-hashing.cpp
       - funcion-prefijo.cpp
+      - z-function.cpp
       - kmp.cpp
       - aho-corasick.cpp
       - aho-corasick-busqueda.cpp
@@ -79,6 +80,8 @@ content:
       - orden-topologico.cpp
       - kosaraju.cpp
       - funciones-kosaraju.cpp
+    - flow:
+      - dinic.cpp
 
   - geometry:
     - punto-2d.cpp
