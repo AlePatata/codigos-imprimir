@@ -1,13 +1,13 @@
 /*
  *Descripción:* Flujo máximo de `s` a `t` en un grafo dirigido con capacidades (usa `ll`)
  - `Dinic d(n)`; `d.addEdge(a, b, c)` agrega la arista `a -> b` con capacidad `c`. Para una arista no dirigida: `d.addEdge(a, b, c, c)`
- - `d.calc(s, t)` retorna el flujo máximo. Después, `e.flow()` es el flujo que pasa por la arista `e` (recorriendo `d.g[u]`)
+ - `d.calc(s, t)` retorna el flujo máximo (requiere `s != t`, si no se queda en un loop infinito). Después, `e.flow()` es el flujo que pasa por la arista `e` (recorriendo `d.g[u]`)
  - Idea: un BFS arma niveles por distancia desde `s`, y el DFS empuja flujo solo por aristas que avanzan un nivel; se repite hasta que `t` no es alcanzable
  - `ptr[v]` recuerda la primera arista de `v` que no está agotada, para no revisarla de nuevo en la misma fase
  - Escalamiento: en la fase `L` solo se usan aristas con capacidad residual $>= 2^(30-L)$
  - Corte mínimo: después de `calc`, `leftOfMinCut(u)` dice si `u` queda del lado de `s`. Las aristas que cruzan de ese lado al otro forman el corte, y su capacidad total es igual al flujo máximo
  - Matching bipartito: `s -> izquierda`, `izquierda -> derecha` y `derecha -> t`, todas con capacidad 1; el flujo máximo es el tamaño del matching
- *Complejidad:* $O(V E log U)$ con $U$ la capacidad máxima; $O(E sqrt(V))$ si todas las capacidades son 1 (matching)
+ *Complejidad:* $O(V E log U)$ con $U$ la capacidad máxima; $O(E min(sqrt(E), V^(2/3)))$ si todas las capacidades son 1; $O(E sqrt(V))$ en matching bipartito
 */
 struct Dinic {
   struct Edge {
