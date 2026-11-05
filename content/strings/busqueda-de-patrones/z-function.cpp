@@ -1,9 +1,6 @@
 /*
-*Descripción:* Calcula un arreglo z donde z[i] es la longitud del prefijo más largo de s que coincide con la substring que comienza en i. Útil para encontrar patrones, períodos, repeticiones y coincidencias de prefijos.
-
-*Complejidad*: (O(n)) en tiempo y (O(n)) en memoria, donde (n) es el largo de la string.
-
-
+ *Descripción:* Calcula un arreglo z donde z[i] es la longitud del prefijo más largo de s que coincide con la substring que comienza en i. Útil para encontrar patrones, períodos, repeticiones y coincidencias de prefijos.
+ *Complejidad*: (O(n)) en tiempo y (O(n)) en memoria, donde (n) es el largo de la string.
 */
 
 vector<int> z_function(const string &s) {
