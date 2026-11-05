@@ -78,6 +78,8 @@ content:
       - dfs.cpp
       - dfs-iterativo.cpp
       - orden-topologico.cpp
+    - flow:
+      - dinic.cpp
 
   - geometry:
     - punto-2d.cpp
