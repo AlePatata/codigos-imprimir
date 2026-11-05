@@ -82,6 +82,7 @@ content:
       - funciones-kosaraju.cpp
     - flow:
       - dinic.cpp
+      - hopcroft-karp.cpp
 
   - geometry:
     - punto-2d.cpp
