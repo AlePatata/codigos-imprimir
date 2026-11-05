@@ -1,7 +1,14 @@
-
-
-// inicialización con Dinic d(tamaño) (internamente usa ll)
-// para obtener el flujo máximo se usa d.calc, añadir una arista es d.addEdge
+/*
+ *Descripción:* Flujo máximo de `s` a `t` en un grafo dirigido con capacidades (usa `ll`)
+ - `Dinic d(n)`; `d.addEdge(a, b, c)` agrega la arista `a -> b` con capacidad `c`. Para una arista no dirigida: `d.addEdge(a, b, c, c)`
+ - `d.calc(s, t)` retorna el flujo máximo. Después, `e.flow()` es el flujo que pasa por la arista `e` (recorriendo `d.g[u]`)
+ - Idea: un BFS arma niveles por distancia desde `s`, y el DFS empuja flujo solo por aristas que avanzan un nivel; se repite hasta que `t` no es alcanzable
+ - `ptr[v]` recuerda la primera arista de `v` que no está agotada, para no revisarla de nuevo en la misma fase
+ - Escalamiento: en la fase `L` solo se usan aristas con capacidad residual $>= 2^(30-L)$
+ - Corte mínimo: después de `calc`, `leftOfMinCut(u)` dice si `u` queda del lado de `s`. Las aristas que cruzan de ese lado al otro forman el corte, y su capacidad total es igual al flujo máximo
+ - Matching bipartito: `s -> izquierda`, `izquierda -> derecha` y `derecha -> t`, todas con capacidad 1; el flujo máximo es el tamaño del matching
+ *Complejidad:* $O(V E log U)$ con $U$ la capacidad máxima; $O(E sqrt(V))$ si todas las capacidades son 1 (matching)
+*/
 struct Dinic {
   struct Edge {
     int to, rev;
@@ -30,7 +37,7 @@ struct Dinic {
   ll calc(int s, int t){
     ll flow = 0; q[0] = s;
     for(int L=0;L<31; ++L) do {
-      lvl = ptr = vector<int> sz(q);
+      lvl = ptr = vector<int>(sz(q));
       int qi = 0, qe = lvl[s] = 1;
       while(qi<qe && !lvl[t]){
         int v = q[qi++];
