@@ -80,6 +80,8 @@ content:
       - orden-topologico.cpp
       - kosaraju.cpp
       - funciones-kosaraju.cpp
+      - puentes.cpp
+      - puntos-de-articulacion.cpp
     - flow:
       - dinic.cpp
 

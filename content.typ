@@ -14,7 +14,7 @@
 
 // Los nombres de archivo van sin tildes; acá se agregan para el título
 #let accents = (
-  area: "área", arbol: "árbol", busqueda: "búsqueda", calculo: "cálculo",
+  area: "área", arbol: "árbol", articulacion: "articulación", busqueda: "búsqueda", calculo: "cálculo",
   depuracion: "depuración", dinamico: "dinámico", ejecucion: "ejecución",
   factorizacion: "factorización",
   funcion: "función", geometria: "geometría", minima: "mínima",
