@@ -77,6 +77,8 @@ content:
       - dfs.cpp
       - dfs-iterativo.cpp
       - orden-topologico.cpp
+      - kosaraju.cpp
+      - funciones-kosaraju.cpp
 
   - geometry:
     - punto-2d.cpp
