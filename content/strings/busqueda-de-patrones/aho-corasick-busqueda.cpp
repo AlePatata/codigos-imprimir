@@ -10,6 +10,8 @@ struct AhoCorasick {
   enum { alpha = 26, first = 'a' }; // cambiar esto!
   struct Node {
     int back, next[alpha], start = -1, end = -1, nmatches = 0;
+    // uint32_t real = 0;
+    //int pref = 0, terminal = 0;
     Node(int v) { memset(next, v, sizeof(next)); }
   };
   vector<Node> N;
@@ -27,6 +29,37 @@ struct AhoCorasick {
     N[n].end = j;
     N[n].nmatches++;
   }
+
+  /*void insert(string &s, int j) {
+    assert(!s.empty());
+
+    int v = 0;
+    N[v].pref++;
+
+    for (char c : s) {
+        int x = c - first;
+        int m = N[v].next[x];
+
+        if (m == -1) {
+            m = sz(N);
+            N[v].next[x] = m;
+            N[v].real |= (1u << x);
+            N.emplace_back(-1);
+        }
+
+        v = m;
+        N[v].pref++;
+    }
+
+    N[v].terminal++;
+
+    // Parte original de Aho-Corasick
+    if (N[v].end == -1) N[v].start = j;
+    backp.push_back(N[v].end);
+    N[v].end = j;
+    N[v].nmatches++;
+}*/
+
   AhoCorasick(vector<string> &pat) : N(1, -1) {
     for (int i = 0; i < sz(pat); i++) insert(pat[i], i);
     N[0].back = sz(N);
@@ -69,3 +102,62 @@ struct AhoCorasick {
     return res;
   }
 };
+
+
+/*Recorre las aristas originales del Trie siguiendo los caracteres de s. Es una función auxiliar utilizada por las demás.
+
+int trieNode(const string &s) const {
+    int v = 0;
+
+    for (char c : s) {
+        int x = c - first;
+
+        if (x < 0 || x >= alpha ||
+            !(N[v].real & (1u << x)))
+            return -1;
+
+        v = N[v].next[x];
+    }
+
+    return v;
+}*/
+
+/* Cuenta cuántas palabras insertadas comienzan con el prefijo s, incluyendo repetidas.
+int countPrefix(const string &s) const {
+    int v = trieNode(s);
+    return v == -1 ? 0 : N[v].pref;
+}*/
+
+/* Cuenta cuántas veces se insertó exactamente la palabra s
+int countWord(const string &s) const {
+    int v = trieNode(s);
+    return v == -1 ? 0 : N[v].terminal;
+}*/
+
+/* bool hasWord(const string &s) const {
+    return countWord(s) > 0;
+}
+
+bool hasPrefix(const string &s) const {
+    return countPrefix(s) > 0;
+}*/
+
+/*Busca el prefijo más largo de s que también sea una palabra completa insertada. 
+int longestWordPrefix(const string &s) const {
+    int v = 0, ans = 0;
+
+    for (int i = 0; i < sz(s); i++) {
+        int x = s[i] - first;
+
+        if (x < 0 || x >= alpha ||
+            !(N[v].real & (1u << x)))
+            break;
+
+        v = N[v].next[x];
+
+        if (N[v].terminal > 0)
+            ans = i + 1;
+    }
+
+    return ans;
+}*/
