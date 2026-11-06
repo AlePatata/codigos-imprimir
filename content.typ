@@ -176,7 +176,7 @@
     let without-comments = remove-description-from-code(content-to-string(all-code))
 
     template-code(title: template-title, only-code: without-comments, level: level, {
-      eval(comments, mode: "markup")
+      raw(comments, block: true)
       line(length: 100%)
       raw(without-comments, lang: "cpp")
     })

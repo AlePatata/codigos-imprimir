@@ -1,5 +1,38 @@
 content:
+  - general:
+      - cancion.typ
   - dp:
       - divine-gifting.cpp
   - strings:
       - rolling_hashing.cpp
+      - no-es-dp.cpp 
+  - ds:
+      - list-removals.cpp
+      - forest-queries.cpp
+      - ilya-and-queries.cpp 
+      - knight-tournament.cpp
+      - emergency-rations.cpp
+      - lucky-queries.cpp
+      - polynomial-queries.cpp
+      - range-updates-and-sums.cpp
+      - subarray-sum-queries.cpp
+  - graphs:
+      - bipartito-1.cpp
+      - bipartito-2.cpp 
+      - new-year-tree.cpp
+      - counting-rooms.cpp 
+      - valid-bfs.cpp
+      - graph-comp.cpp
+      - there-and-back-again.cpp
+      - lost-in-translation.cpp 
+      - road-scholar.cpp
+      - chemistry.cpp 
+      - roads-berland.cpp
+      - mst:
+         - road-reparation.cpp
+         - road-to-savings.cpp 
+      - flow:
+         - bilingual.cpp
+         - juguetes.cpp 
+         - supporting.cpp 
+         - bootfall.cpp
