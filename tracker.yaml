@@ -1,3 +1,5 @@
 content:
   - dp:
       - divine-gifting.cpp
+  - strings:
+      - rolling_hashing.cpp
